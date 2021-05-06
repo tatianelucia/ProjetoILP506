@@ -2,23 +2,43 @@ package com.ilp506.conversao;
 
 public class Conversao {
 
-    public double polegadasECentimetros(double polegadas, double centimetros) {
+    public static double centimetrosPolegadas(double centimetros) {
 
     }
 
-    public double pesEMetros(double pes, double metros) {
+    public static double polegadasCentimetros(double polegadas) {
 
     }
 
-    public double milhaEKm(double milha, double km) {
+    public static double pesMetros(double pes) {
 
     }
 
-    public double celsiusEFahrenheit(double celsius, double fahrenheit){
+    public static double metrosPes(double metros) {
 
     }
 
-    public double nosEKm(double nos, double km){
+    public static double milhaKm(double km) {
+
+    }
+
+    public static double kmMilha(double milha) {
+
+    }
+
+    public static double celsiusFahrenheit(double f){
+        return (f-32)*5/9;
+    }
+
+    public static double fahrenheitcelsius(double c){
+        return (32+c)*9/5;
+    }
+
+    public static double nosKm(double km){
+
+    }
+
+    public static double kmNos(double nos){
 
     }
 }
