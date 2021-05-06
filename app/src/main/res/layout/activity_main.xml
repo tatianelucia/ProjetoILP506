@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DFE3FD"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txt_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Conversão"
+        tools:layout_editor_absoluteX="171dp"
+        tools:layout_editor_absoluteY="29dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#CA1818"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        tools:layout_editor_absoluteX="108dp"
+        tools:layout_editor_absoluteY="419dp" />
+
+    <Button
+        android:id="@+id/btn_converter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Converter"
+        tools:layout_editor_absoluteX="94dp"
+        tools:layout_editor_absoluteY="527dp" />
+
+    <Button
+        android:id="@+id/btn_limpar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Limpar"
+        tools:layout_editor_absoluteX="233dp"
+        tools:layout_editor_absoluteY="527dp" />
+
+    <RadioButton
+        android:id="@+id/rb_PolCM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="104dp"
+        android:text="Polegadas para CM"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:id="@+id/rb_PM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="32dp"
+        android:text="Pés para Metros"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rb_PolCM" />
+
+    <RadioButton
+        android:id="@+id/rb_KM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Km para Milha"
+        tools:layout_editor_absoluteX="224dp"
+        tools:layout_editor_absoluteY="215dp" />
+
+    <RadioButton
+        android:id="@+id/rb_MK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Milha para Km"
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="215dp" />
+
+    <RadioButton
+        android:id="@+id/rb_FC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fº para Cº"
+        tools:layout_editor_absoluteX="224dp"
+        tools:layout_editor_absoluteY="270dp" />
+
+    <RadioButton
+        android:id="@+id/rb_NKmH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nós para Km/h"
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="326dp" />
+
+    <RadioButton
+        android:id="@+id/rb_KmHN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Km/h para Nós"
+        tools:layout_editor_absoluteX="224dp"
+        tools:layout_editor_absoluteY="326dp" />
+
+    <RadioButton
+        android:id="@+id/rb_CF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cº para Fº"
+        tools:layout_editor_absoluteX="94dp"
+        tools:layout_editor_absoluteY="270dp" />
+
+    <RadioButton
+        android:id="@+id/rb_CMPol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="32dp"
+        android:text="CM para Polegadas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:id="@+id/rb_MP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Metros para Pés"
+        app:layout_constraintTop_toBottomOf="@+id/rb_CMPol"
+        tools:layout_editor_absoluteX="224dp" />
+
+</android.support.constraint.ConstraintLayout>
