@@ -7,154 +7,44 @@
     android:background="#DFE3FD"
     tools:context=".MainActivity">
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <Spinner
+        android:id="@+id/spConversor"
+        android:layout_width="244dp"
+        android:layout_height="39dp"
+        android:entries="@array/convertionArray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/txt_titulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Conversão"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.064" />
+        app:layout_constraintVertical_bias="0.197" />
 
     <EditText
-        android:id="@+id/txt_dado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="248dp"
-        android:backgroundTint="#CA1818"
+        android:id="@+id/txtEntrada"
+        android:layout_width="245dp"
+        android:layout_height="41dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Insira o valor a ser convertido"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="99dp" />
-
-    <Button
-        android:id="@+id/btn_converter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:onClick="btnConverterOnClick"
-        android:text="Converter"
-        app:layout_constraintTop_toBottomOf="@+id/txt_dado"
-        tools:layout_editor_absoluteX="89dp" />
-
-    <Button
-        android:id="@+id/btn_limpar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Limpar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_converter"
-        tools:layout_editor_absoluteY="527dp" />
-
-    <RadioButton
-        android:id="@+id/rb_PolCM"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="120dp"
-        android:text="Polegadas para CM"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.31" />
 
-    <RadioButton
-        android:id="@+id/rb_KM"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Km para Milha"
-        app:layout_constraintTop_toBottomOf="@+id/rb_MP"
-        tools:layout_editor_absoluteX="223dp" />
-
-    <RadioButton
-        android:id="@+id/rb_MK"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="28dp"
-        android:text="Milha para Km"
-        app:layout_constraintEnd_toStartOf="@+id/rb_KM"
-        app:layout_constraintTop_toBottomOf="@+id/rb_PM" />
-
-    <RadioButton
-        android:id="@+id/rb_FC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fº para Cº"
-        tools:layout_editor_absoluteX="231dp"
-        tools:layout_editor_absoluteY="267dp" />
-
-    <RadioButton
-        android:id="@+id/rb_NKmH"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:text="Nós para Km/h"
-        app:layout_constraintEnd_toStartOf="@+id/rb_KmHN"
-        app:layout_constraintTop_toBottomOf="@+id/rb_CF" />
-
-    <RadioButton
-        android:id="@+id/rb_KmHN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Km/h para Nós"
-        app:layout_constraintTop_toBottomOf="@+id/rb_FC"
-        tools:layout_editor_absoluteX="224dp" />
-
-    <RadioButton
-        android:id="@+id/rb_CF"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="40dp"
-        android:text="Cº para Fº"
-        app:layout_constraintEnd_toStartOf="@+id/rb_FC"
-        app:layout_constraintTop_toBottomOf="@+id/rb_MK" />
-
-    <RadioButton
-        android:id="@+id/rb_CMPol"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="32dp"
-        android:text="CM para Polegadas"
+    <EditText
+        android:id="@+id/txtSaida"
+        android:layout_width="245dp"
+        android:layout_height="41dp"
+        android:ems="10"
+        android:hint="Resultado aparecerá aqui"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <RadioButton
-        android:id="@+id/rb_MP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="16dp"
-        android:text="Metros para Pés"
-        app:layout_constraintStart_toEndOf="@+id/rb_PM"
-        app:layout_constraintTop_toBottomOf="@+id/rb_CMPol" />
-
-    <RadioButton
-        android:id="@+id/rb_PM"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="16dp"
-        android:text="Pés para Metros"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rb_PolCM" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.42" />
 
 </android.support.constraint.ConstraintLayout>
