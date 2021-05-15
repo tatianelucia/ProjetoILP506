@@ -16,27 +16,10 @@
         android:entries="@array/convertionArray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.574"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.413" />
-
-    <EditText
-        android:id="@+id/txtEntrada"
-        android:layout_width="254dp"
-        android:layout_height="43dp"
-        android:background="#9C27B0"
-        android:ems="10"
-        android:hint="Insira o valor a ser convertido"
-        android:inputType="number"
-        android:textAlignment="textStart"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.526" />
+        app:layout_constraintVertical_bias="0.421" />
 
     <EditText
         android:id="@+id/txtSaida"
@@ -50,10 +33,59 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.272"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.637" />
+
+    <TextView
+        android:id="@+id/saida"
+        android:layout_width="68dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="269dp"
+        android:layout_marginEnd="12dp"
+        android:background="#9C27B0"
+        android:textColor="#090909"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.385"
+        app:layout_constraintStart_toStartOf="@+id/txtSaida"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.641" />
+
+    <TextView
+        android:id="@+id/entrada"
+        android:layout_width="68dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="269dp"
+        android:layout_marginEnd="12dp"
+        android:background="#9C27B0"
+        android:textColor="#090909"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.266"
+        app:layout_constraintStart_toStartOf="@+id/txtSaida"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.543" />
+
+    <EditText
+        android:id="@+id/txtEntrada"
+        android:layout_width="254dp"
+        android:layout_height="43dp"
+        android:background="#9C27B0"
+        android:ems="10"
+        android:hint="Insira o valor a ser convertido"
+        android:inputType="number"
+        android:textAlignment="textStart"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.267"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.539" />
 
     <TextView
         android:id="@+id/textView"
