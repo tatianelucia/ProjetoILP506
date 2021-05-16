@@ -157,47 +157,50 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.963" />
 
+
     <Button
         android:id="@+id/btnLimpar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#FFFDFD"
+        android:background="#F9F8F8"
         android:onClick="btnlimpar"
         android:text="Limpar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.204"
+        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.767" />
+        app:layout_constraintTop_toBottomOf="@+id/txtRegistro"
+        app:layout_constraintVertical_bias="0.082" />
 
     <Button
         android:id="@+id/btnRegistrar"
         android:layout_width="180dp"
         android:layout_height="45dp"
-        android:background="#FFFDFD"
+        android:layout_marginTop="20dp"
+        android:background="#F9F8F8"
         android:onClick="btnRegistrar"
         android:text="Registrar Conversão"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.757"
+        app:layout_constraintHorizontal_bias="0.857"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.768" />
-
+        app:layout_constraintTop_toBottomOf="@+id/txtRegistro"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txtRegistro"
-        android:layout_width="315dp"
-        android:layout_height="149dp"
-        android:layout_marginBottom="240dp"
-        android:background="#FBF7F7"
+        android:layout_width="357dp"
+        android:layout_height="144dp"
+        android:background="#F9F8F8"
+        android:backgroundTint="#F9F8F8"
         android:textAlignment="center"
-        android:textColor="#F60606"
+        android:textColor="#B118C8"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.447"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.388"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSaida"
+        app:layout_constraintVertical_bias="0.039" />
 
 </android.support.constraint.ConstraintLayout>

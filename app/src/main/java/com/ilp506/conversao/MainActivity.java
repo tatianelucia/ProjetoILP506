@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity{
     private  TextView txtSaida;
     private  TextView entrada;
     private  TextView saida;
-    private  ArrayList<Double> strRegistrar;
+    private ArrayList<String> strRegistrar;
     private  TextView txtRegistro;
 
     @Override
@@ -36,32 +36,33 @@ public class MainActivity extends AppCompatActivity{
         saida = findViewById(R.id.saida);
         strRegistrar = new ArrayList<>();
         txtRegistro = findViewById(R.id.txtRegistro);
-
         txtRegistro.setMovementMethod(new ScrollingMovementMethod());
     }
 
     public void btnRegistrar(View view) {
-        String result;
-        //result = txtEntrada.getText().toString();
-       Double.parseDouble(result = txtSaida.getText().toString());
-        if(result != null) {
-            strRegistrar.add(Double.parseDouble(result));
+        StringBuilder result = new StringBuilder();
+        if(!(txtEntrada.getText().toString().isEmpty() && txtSaida.getText().toString().isEmpty())){
+        result.append(txtEntrada.getText().toString()).append(" em ").append(entrada.getText())
+                .append(" tem como resultado ").append(txtSaida.getText().toString())
+                .append(" em ").append(saida.getText());
+            strRegistrar.add(result.toString());
         }
         exibeRegistro();
     }
 
     private void exibeRegistro() {
-        String s = "";
+        StringBuilder s = new StringBuilder();
         for(int i = 0 ; i < strRegistrar.size(); i++) {
             if(i < strRegistrar.size()-1) {
-                s += (i+1) + ": " + strRegistrar.get(i).toString() + saida + "\n";
+                s.append(i + 1).append(": ").append(strRegistrar.get(i)).append("\n");
             }
             else {
-                s += (i+1) + ": " + strRegistrar.get(i).toString() + saida;
+                s.append(i + 1).append(": ").append(strRegistrar.get(i));
             }
         }
-        txtRegistro.setText(s);
+        txtRegistro.setText(s.toString());
     }
+
     public void onResume() {
         super.onResume();
 
@@ -94,6 +95,8 @@ public class MainActivity extends AppCompatActivity{
             public void afterTextChanged(Editable s) {
                 switch((int) spinner.getSelectedItemId()){
                     case 0 :
+                        break;
+                    case 1 :
                         entrada.setText("Polegadas");
                         saida.setText("CM");
                         if(!txtEntrada.getText().toString().isEmpty()){
@@ -101,35 +104,35 @@ public class MainActivity extends AppCompatActivity{
                                     Double.parseDouble(txtEntrada.getText().toString())));
                         }
                         break;
-                    case 1 :
+                    case 2 :
                         entrada.setText("CM");
                         saida.setText("Polegadas");
                         if(!txtEntrada.getText().toString().isEmpty())
                             txtSaida.setText(Conversao.centimetrosPolegadas(
                                     Double.parseDouble(txtEntrada.getText().toString())));
                         break;
-                    case 2 :
+                    case 3 :
                         entrada.setText("Pés");
                         saida.setText("Metros");
                         if(!txtEntrada.getText().toString().isEmpty())
                             txtSaida.setText(Conversao.pesMetros(
                                     Double.parseDouble(txtEntrada.getText().toString())));
                         break;
-                    case 3 :
+                    case 4 :
                         entrada.setText("Metros");
                         saida.setText("Pés");
                         if(!txtEntrada.getText().toString().isEmpty())
                             txtSaida.setText(Conversao.metrosPes(
                                     Double.parseDouble(txtEntrada.getText().toString())));
                         break;
-                    case 4 :
+                    case 5 :
                         entrada.setText("Milhas");
                         saida.setText("Km");
                         if(!txtEntrada.getText().toString().isEmpty())
                             txtSaida.setText(Conversao.milhaKm(
                                     Double.parseDouble(txtEntrada.getText().toString())));
                         break;
-                    case 5 :
+                    case 6 :
                         entrada.setText("Km");
                         saida.setText("Milhas");
                         if(!txtEntrada.getText().toString().isEmpty())
@@ -137,28 +140,28 @@ public class MainActivity extends AppCompatActivity{
                                     Conversao.kmMilha(
                                             Double.parseDouble(txtEntrada.getText().toString())));
                         break;
-                    case 6 :
+                    case 7 :
                         entrada.setText("Fº");
                         saida.setText("Cº");
                         if(!txtEntrada.getText().toString().isEmpty())
                             txtSaida.setText(Conversao.fahrenheitCelsius(
                                     Double.parseDouble(txtEntrada.getText().toString())));
                         break;
-                    case 7 :
+                    case 8 :
                         entrada.setText("Cº");
                         saida.setText("Fº");
                         if(!txtEntrada.getText().toString().isEmpty())
                             txtSaida.setText(Conversao.celsiusFahrenheit(
                                     Double.parseDouble(txtEntrada.getText().toString())));
                         break;
-                    case 8 :
+                    case 9 :
                         entrada.setText("Nós");
                         saida.setText("Km");
                         if(!txtEntrada.getText().toString().isEmpty())
                             txtSaida.setText(Conversao.nosKm(
                                     Double.parseDouble(txtEntrada.getText().toString())));
                         break;
-                    case 9 :
+                    case 10 :
                         entrada.setText("Km");
                         saida.setText("Nós");
                         if(!txtEntrada.getText().toString().isEmpty())
@@ -170,22 +173,11 @@ public class MainActivity extends AppCompatActivity{
         };
 
         txtEntrada.addTextChangedListener(txtwatcher);
-
-
-            TextView v;
-            v = findViewById(R.id.txtEntrada);
-            v.setText("");
-
-        }
+    }
 
     @SuppressLint("WrongViewCast")
     public void btnlimpar(View view) {
-        TextView v;
-        //v = findViewById(R.id.spConversor);
-        //v.setText("Selecionar Tipo de Conversão");
-        v = findViewById(R.id.txtEntrada);
-        v.setText("");
-        v = findViewById(R.id.txtSaida);
-        v.setText("");
+        txtEntrada.setText("");
+        txtSaida.setText("");
     }
 }
