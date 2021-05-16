@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
-        txtEntrada.addTextChangedListener(new TextWatcher() {
+        TextWatcher txtwatcher = new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -61,93 +61,86 @@ public class MainActivity extends AppCompatActivity{
 
             }
 
-            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void afterTextChanged(Editable s) {
                 switch((int) spinner.getSelectedItemId()){
                     case 0 :
+                        entrada.setText("Polegadas");
+                        saida.setText("CM");
                         if(!txtEntrada.getText().toString().isEmpty())
-                        txtSaida.setText(String.valueOf(
-                                Conversao.polegadasCentimetros(
-                                        Double.parseDouble(txtEntrada.getText().toString()))));
-                        entrada.setText("polegadas");
-                        saida.setText("cm");
+                            txtSaida.setText(Conversao.polegadasCentimetros(
+                                    Double.parseDouble(txtEntrada.getText().toString())));
+
                         break;
                     case 1 :
-
+                        entrada.setText("CM");
+                        saida.setText("Polegadas");
                         if(!txtEntrada.getText().toString().isEmpty())
-                        txtSaida.setText(String.valueOf(
-                                Conversao.centimetrosPolegadas(
-                                        Double.parseDouble(txtEntrada.getText().toString()))));
-                        entrada.setText("cm");
-                        saida.setText("polegadas");
+                            txtSaida.setText(Conversao.centimetrosPolegadas(
+                                    Double.parseDouble(txtEntrada.getText().toString())));
                         break;
                     case 2 :
+                        entrada.setText("Pés");
+                        saida.setText("Metros");
                         if(!txtEntrada.getText().toString().isEmpty())
-                        txtSaida.setText(String.valueOf(
-                                Conversao.pesMetros(
-                                        Double.parseDouble(txtEntrada.getText().toString()))));
-                        entrada.setText("pés");
-                        saida.setText("metros");
+                            txtSaida.setText(Conversao.pesMetros(
+                                    Double.parseDouble(txtEntrada.getText().toString())));
                         break;
                     case 3 :
+                        entrada.setText("Metros");
+                        saida.setText("Pés");
                         if(!txtEntrada.getText().toString().isEmpty())
-                        txtSaida.setText(String.valueOf(
-                                Conversao.metrosPes(
-                                        Double.parseDouble(txtEntrada.getText().toString()))));
-                        entrada.setText("metros");
-                        saida.setText("pés");
+                            txtSaida.setText(Conversao.metrosPes(
+                                    Double.parseDouble(txtEntrada.getText().toString())));
                         break;
                     case 4 :
-                        if(!txtEntrada.getText().toString().isEmpty())
-                        txtSaida.setText(String.valueOf(
-                                Conversao.milhaKm(
-                                        Double.parseDouble(txtEntrada.getText().toString()))));
-                        entrada.setText("milhas");
+                        entrada.setText("Milhas");
                         saida.setText("Km");
+                        if(!txtEntrada.getText().toString().isEmpty())
+                            txtSaida.setText(Conversao.milhaKm(
+                                    Double.parseDouble(txtEntrada.getText().toString())));
                         break;
                     case 5 :
-                        if(!txtEntrada.getText().toString().isEmpty())
-                        txtSaida.setText(String.valueOf(
-                                Conversao.kmMilha(
-                                        Double.parseDouble(txtEntrada.getText().toString()))));
                         entrada.setText("Km");
-                        saida.setText("milhas");
+                        saida.setText("Milhas");
+                        if(!txtEntrada.getText().toString().isEmpty())
+                            txtSaida.setText(
+                                    Conversao.kmMilha(
+                                            Double.parseDouble(txtEntrada.getText().toString())));
                         break;
                     case 6 :
-                        if(!txtEntrada.getText().toString().isEmpty())
-                        txtSaida.setText(String.valueOf(
-                                Conversao.fahrenheitCelsius(
-                                        Double.parseDouble(txtEntrada.getText().toString()))));
                         entrada.setText("Fº");
                         saida.setText("Cº");
+                        if(!txtEntrada.getText().toString().isEmpty())
+                            txtSaida.setText(Conversao.fahrenheitCelsius(
+                                    Double.parseDouble(txtEntrada.getText().toString())));
                         break;
                     case 7 :
-                        if(!txtEntrada.getText().toString().isEmpty())
-                        txtSaida.setText(String.valueOf(
-                                Conversao.celsiusFahrenheit(
-                                        Double.parseDouble(txtEntrada.getText().toString()))));
                         entrada.setText("Cº");
                         saida.setText("Fº");
+                        if(!txtEntrada.getText().toString().isEmpty())
+                            txtSaida.setText(Conversao.celsiusFahrenheit(
+                                    Double.parseDouble(txtEntrada.getText().toString())));
                         break;
                     case 8 :
-                        if(!txtEntrada.getText().toString().isEmpty())
-                        txtSaida.setText(String.valueOf(
-                                Conversao.nosKm(
-                                        Double.parseDouble(txtEntrada.getText().toString()))));
-                        entrada.setText("nós");
+                        entrada.setText("Nós");
                         saida.setText("Km");
+                        if(!txtEntrada.getText().toString().isEmpty())
+                            txtSaida.setText(Conversao.nosKm(
+                                    Double.parseDouble(txtEntrada.getText().toString())));
                         break;
                     case 9 :
-                        if(!txtEntrada.getText().toString().isEmpty())
-                        txtSaida.setText(String.valueOf(
-                                Conversao.kmNos(
-                                        Double.parseDouble(txtEntrada.getText().toString()))));
                         entrada.setText("Km");
-                        saida.setText("nós");
+                        saida.setText("Nós");
+                        if(!txtEntrada.getText().toString().isEmpty())
+                            txtSaida.setText(Conversao.kmNos(
+                                    Double.parseDouble(txtEntrada.getText().toString())));
                         break;
                 }
             }
-        });
+        };
+
+        txtEntrada.addTextChangedListener(txtwatcher);
+
     }
 }

@@ -1,16 +1,16 @@
 <resources>
-    <string name="app_name">\t\tCONVERSÃO DE UNIDADES DE MEDIDA</string>
+    <string name="app_name">Conversão de Unidades de Medida</string>
     <string-array name="convertionArray">
-        <item>polegada - cm</item>
-        <item>cm - polegada</item>
-        <item>pés - metros</item>
-        <item>metros - pés</item>
-        <item>milha - km</item>
-        <item>km - milha</item>
+        <item>Polegada - CM</item>
+        <item>CM - Polegada</item>
+        <item>Pés - Metros</item>
+        <item>Metros - Pés</item>
+        <item>Milha - Km</item>
+        <item>Km - Milha</item>
         <item>ºFarenheit - ºCelsius</item>
         <item>ºCelsius - ºFarenheit</item>
-        <item>nós - km/h</item>
-        <item>km/h - nós</item>
+        <item>Nós - Km/h</item>
+        <item>Km/h - Nós</item>
     </string-array>
 
 </resources>
