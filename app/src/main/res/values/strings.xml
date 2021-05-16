@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Conversão de Unidades de Medida</string>
     <string-array name="convertionArray">
+        <item>Selecionar Tipo de Conversão</item>
         <item>Polegada - CM</item>
         <item>CM - Polegada</item>
         <item>Pés - Metros</item>

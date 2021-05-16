@@ -1,39 +1,67 @@
 package com.ilp506.conversao;
 
 
-import android.os.Build;
-import android.support.annotation.RequiresApi;
+import android.annotation.SuppressLint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity{
 
-    Spinner spinner;
-    TextView txtEntrada;
-    TextView txtSaida;
-    TextView entrada;
-    TextView saida;
+    private  Spinner spinner;
+    private  TextView txtEntrada;
+    private  TextView txtSaida;
+    private  TextView entrada;
+    private  TextView saida;
+    private  ArrayList<Double> strRegistrar;
+    private  TextView txtRegistro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        spinner= findViewById(R.id.spConversor);
+        spinner = findViewById(R.id.spConversor);
         txtSaida = findViewById(R.id.txtSaida);
         txtEntrada = findViewById(R.id.txtEntrada);
         txtSaida.setEnabled(false);
         entrada = findViewById(R.id.entrada);
         saida = findViewById(R.id.saida);
+        strRegistrar = new ArrayList<>();
+        txtRegistro = findViewById(R.id.txtRegistro);
+
+        txtRegistro.setMovementMethod(new ScrollingMovementMethod());
     }
 
+    public void btnRegistrar(View view) {
+        String result;
+        //result = txtEntrada.getText().toString();
+       Double.parseDouble(result = txtSaida.getText().toString());
+        if(result != null) {
+            strRegistrar.add(Double.parseDouble(result));
+        }
+        exibeRegistro();
+    }
+
+    private void exibeRegistro() {
+        String s = "";
+        for(int i = 0 ; i < strRegistrar.size(); i++) {
+            if(i < strRegistrar.size()-1) {
+                s += (i+1) + ": " + strRegistrar.get(i).toString() + saida + "\n";
+            }
+            else {
+                s += (i+1) + ": " + strRegistrar.get(i).toString() + saida;
+            }
+        }
+        txtRegistro.setText(s);
+    }
     public void onResume() {
         super.onResume();
 
@@ -48,6 +76,7 @@ public class MainActivity extends AppCompatActivity{
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
+
         });
 
         TextWatcher txtwatcher = new TextWatcher() {
@@ -67,10 +96,10 @@ public class MainActivity extends AppCompatActivity{
                     case 0 :
                         entrada.setText("Polegadas");
                         saida.setText("CM");
-                        if(!txtEntrada.getText().toString().isEmpty())
+                        if(!txtEntrada.getText().toString().isEmpty()){
                             txtSaida.setText(Conversao.polegadasCentimetros(
                                     Double.parseDouble(txtEntrada.getText().toString())));
-
+                        }
                         break;
                     case 1 :
                         entrada.setText("CM");
@@ -142,5 +171,21 @@ public class MainActivity extends AppCompatActivity{
 
         txtEntrada.addTextChangedListener(txtwatcher);
 
+
+            TextView v;
+            v = findViewById(R.id.txtEntrada);
+            v.setText("");
+
+        }
+
+    @SuppressLint("WrongViewCast")
+    public void btnlimpar(View view) {
+        TextView v;
+        //v = findViewById(R.id.spConversor);
+        //v.setText("Selecionar Tipo de Conversão");
+        v = findViewById(R.id.txtEntrada);
+        v.setText("");
+        v = findViewById(R.id.txtSaida);
+        v.setText("");
     }
 }

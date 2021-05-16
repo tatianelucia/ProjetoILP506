@@ -10,8 +10,8 @@
     <Spinner
         android:id="@+id/spConversor"
         style="@style/Widget.AppCompat.Spinner"
-        android:layout_width="198dp"
-        android:layout_height="38dp"
+        android:layout_width="230dp"
+        android:layout_height="40dp"
         android:background="#F9F8F8"
         android:dropDownSelector="@android:drawable/alert_light_frame"
         android:entries="@array/convertionArray"
@@ -29,9 +29,9 @@
         android:layout_height="39dp"
         android:background="#F9F8F8"
         android:ems="10"
-        android:hint="Resultado aparecerá aqui"
+        android:hint=" Resultado aparecerá aqui"
         android:inputType="number"
-        android:textAlignment="textStart"
+        android:textAlignment="center"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,9 +46,9 @@
         android:layout_height="43dp"
         android:background="#F9F8F8"
         android:ems="10"
-        android:hint="Insira o valor a ser convertido"
+        android:hint=" Insira o valor a ser convertido"
         android:inputType="numberDecimal"
-        android:textAlignment="textStart"
+        android:textAlignment="center"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -112,24 +112,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintHorizontal_bias="0.072"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.598" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tatiane Lucia de Souza Barreto - 18215855"
-        android:textColor="#AA6DA3"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.116"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.636" />
+        app:layout_constraintVertical_bias="0.872" />
 
     <TextView
         android:id="@+id/textView2"
@@ -143,7 +129,21 @@
         app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.558" />
+        app:layout_constraintVertical_bias="0.831" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tatiane Lucia de Souza Barreto - 18215855"
+        android:textColor="#AA6DA3"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.91" />
 
     <TextView
         android:id="@+id/textView5"
@@ -156,5 +156,48 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.963" />
+
+    <Button
+        android:id="@+id/btnLimpar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFFDFD"
+        android:onClick="btnlimpar"
+        android:text="Limpar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.204"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.767" />
+
+    <Button
+        android:id="@+id/btnRegistrar"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:background="#FFFDFD"
+        android:onClick="btnRegistrar"
+        android:text="Registrar Conversão"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.757"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.768" />
+
+
+    <TextView
+        android:id="@+id/txtRegistro"
+        android:layout_width="315dp"
+        android:layout_height="149dp"
+        android:layout_marginBottom="240dp"
+        android:background="#FBF7F7"
+        android:textAlignment="center"
+        android:textColor="#F60606"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.447"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

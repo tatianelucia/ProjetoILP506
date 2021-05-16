@@ -1,5 +1,8 @@
 package com.ilp506.conversao;
 
+import android.view.View;
+import android.widget.TextView;
+
 import java.text.DecimalFormat;
 
 
@@ -46,4 +49,6 @@ public class Conversao {
 
         return formatador.format(km/1.852);
     }
-}
+
+    }
+
