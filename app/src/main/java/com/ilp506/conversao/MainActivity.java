@@ -180,4 +180,10 @@ public class MainActivity extends AppCompatActivity{
         txtEntrada.setText("");
         txtSaida.setText("");
     }
+
+    @SuppressLint("WrongViewCast")
+    public void btnApagarRegistro(View view) {
+        txtRegistro.setText("");
+    }
+
 }
